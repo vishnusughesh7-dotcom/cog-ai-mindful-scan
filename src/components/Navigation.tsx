@@ -17,7 +17,7 @@ const Navigation = () => {
     { href: "/contact", label: "Contact" },
   ];
 
-  const isActive = (href) => location.pathname === href;
+  const isActive = (href: string) => location.pathname === href;
 
   return (
     <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-sm border-b border-border z-50">

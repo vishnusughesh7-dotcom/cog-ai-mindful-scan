@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Demo = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);
 
   const questions = [
@@ -39,7 +39,7 @@ const Demo = () => {
     }
   ];
 
-  const handleAnswer = (answerIndex) => {
+  const handleAnswer = (answerIndex: number) => {
     const newAnswers = [...answers, answerIndex];
     setAnswers(newAnswers);
 
@@ -60,7 +60,7 @@ const Demo = () => {
     return Math.round((correct / questions.length) * 100);
   };
 
-  const getRiskLevel = (score) => {
+  const getRiskLevel = (score: number) => {
     if (score >= 80) return { level: "Low Risk", color: "text-green-600", bg: "bg-green-50" };
     if (score >= 60) return { level: "Moderate Risk", color: "text-yellow-600", bg: "bg-yellow-50" };
     return { level: "Higher Risk", color: "text-red-600", bg: "bg-red-50" };
